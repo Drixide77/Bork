@@ -1,6 +1,3 @@
-#include <iostream>
-#include <string>
-#include <vector>
 #include "Utils.h"
 
 using namespace std;
@@ -8,8 +5,7 @@ using namespace std;
 int main()
 {
 	string input;
-	bool running = true;
-  HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+	bool running = true;  
   TextColor(11);
   cout << "Welcome to BORK: A Tale of Tails!\n";
   TextColor(15);
