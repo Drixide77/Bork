@@ -9,9 +9,11 @@
 
 using namespace std;
 
+//Contain global definitions and functions
+
 //-------------------- Console Related Functions --------------------
 
-// Pause(): Halts execution until next any key is pressed
+// Pause(): Halts execution until a key is pressed
 void Pause();
 
 // TextColor(color): Changes the color in what the text will print. color = Int (0-15)
