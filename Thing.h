@@ -25,7 +25,7 @@ public:
   Thing* parent;
   list<Thing*> contains;
 
-  Thing(const string& name, const string& description, const ThingType& type);
+  Thing(const string& name, const string& description, Thing* parent);
   virtual ~Thing();
 };
 

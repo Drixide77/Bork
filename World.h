@@ -11,11 +11,14 @@
 class World
 {
 public:
-  Player* player;
-  vector<Thing*> things;
-
   World();
   virtual ~World();
+
+  bool sendCommands(const string& input);
+
+private:
+  Player* player;
+  list<Thing*> things;
 };
 
 #endif

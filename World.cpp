@@ -11,12 +11,18 @@ World::World()
   things.push_back(forest);
 
   things.push_back(player);
+
+  things.push_back(sword);
 }
 
 World::~World()
 {
-  for (vector<Thing*>::iterator it = things.begin(); it != things.end(); ++it)
-  {
-    delete (*it);
-  }
+  for (list<Thing*>::iterator it = things.begin(); it != things.end(); ++it)
+    delete *it;
+
+  things.clear();
+}
+
+bool World::sendCommands(const string& input) {
+  return (player)->parseCommands(input);
 }

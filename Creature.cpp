@@ -1,9 +1,10 @@
 #include "Creature.h"
 
-Creature::Creature(const string& name, const string& description, Room* room): Thing(name, description, CREATURE)
+Creature::Creature(const string& name, const string& description, Room* room): Thing(name, description, room)
 {
-  this->parent = room;
   this->health = 1;
+  this->type = CREATURE;
+  (room)->contains.push_back(this);
 }
 
 Creature::~Creature()

@@ -1,12 +1,12 @@
 #include "Item.h"
 
-Item::Item(const string& name, const string& description, Thing* container): Thing(name, description, ITEM)
+Item::Item(const string& name, const string& description, Thing* container): Thing(name, description, container)
 {
-  this->parent = container;
+  this->type = ITEM;
   (container)->contains.push_back(this);
 }
 
 Item::~Item()
 {
-  Thing::~Thing();
+
 }

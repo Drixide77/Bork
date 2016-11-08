@@ -1,16 +1,13 @@
 #include "Thing.h"
 
-Thing::Thing(const string& name, const string& description, const ThingType& type)
+Thing::Thing(const string& name, const string& description, Thing* parent)
 {
   this->name = name;
   this->description = description;
-  this->type = type;
+  this->parent = parent;
 }
 
 Thing::~Thing()
 {
-  for (list<Thing*>::iterator it = contains.begin(); it != contains.end(); ++it)
-  {
-    delete (*it);
-  }
+  
 }

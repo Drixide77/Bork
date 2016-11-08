@@ -9,7 +9,6 @@ int main()
 	string input;
 	bool running = true;  
   World world = World();
-  Player* player = world.player;
 
   TextColor(11);
   cout << "Welcome to BORK: A Tale of Tails!\n";
@@ -17,7 +16,7 @@ int main()
 	while (running)
   {
     cin >> input;
-    running = (player)->parseCommands(input);
+    running = world.sendCommands(input);
 	}
 	return 0;
 }
