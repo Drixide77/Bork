@@ -13,5 +13,4 @@ Thing::~Thing()
   {
     delete (*it);
   }
-  delete this;
 }
