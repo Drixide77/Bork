@@ -1,10 +1,8 @@
 #include "Thing.h"
 
-Thing::Thing(const string& name, const string& description, Thing* parent)
+Thing::Thing(const string& name, const string& description, Thing* parent = NULL): name(name), description(description), parent(parent), type(THING)
 {
-  this->name = name;
-  this->description = description;
-  this->parent = parent;
+  if (parent != NULL) (parent)->contains.push_back(this);
 }
 
 Thing::~Thing()

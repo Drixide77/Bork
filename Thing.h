@@ -6,6 +6,7 @@
 
 enum ThingType
 {
+  THING,
   ROOM,
   ITEM,
   EXIT,

@@ -2,10 +2,9 @@
 
 Player::Player(const string& name, const string& description, Room* room): Creature(name, description, room)
 {
-  this->level = 1;
-  this->exp = 0;
-  this->type = PLAYER;
-  // (room)->contains.push_back(this);  Thing already does this!!!
+  level = 1;
+  exp = 0;
+  type = PLAYER;
 }
 
 Player::~Player()

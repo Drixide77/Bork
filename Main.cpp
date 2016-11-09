@@ -8,7 +8,7 @@ int main()
 {
 	string input;
 	bool running = true;  
-  World world = World(); //Maybe it should be World world; without the = World() ?
+  World world;
 
   TextColor(11);
   cout << "Welcome to BORK: A Tale of Tails!\n";
