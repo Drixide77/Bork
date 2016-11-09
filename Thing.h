@@ -22,11 +22,14 @@ public:
   ThingType type;
   string name;
   string description;
+
   Thing* parent;
   list<Thing*> contains;
 
+public:
   Thing(const string& name, const string& description, Thing* parent);
   virtual ~Thing();
+
 };
 
 #endif
