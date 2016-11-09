@@ -4,7 +4,7 @@ Creature::Creature(const string& name, const string& description, Room* room): T
 {
   this->health = 1;
   this->type = CREATURE;
-  (room)->contains.push_back(this);
+  // (room)->contains.push_back(this);  Thing already does this!!!
 }
 
 Creature::~Creature()
