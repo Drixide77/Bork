@@ -5,7 +5,7 @@ Player::Player(const string& name, const string& description, Room* room): Creat
   this->level = 1;
   this->exp = 0;
   this->type = PLAYER;
-  (room)->contains.push_back(this);
+  // (room)->contains.push_back(this);  Thing already does this!!!
 }
 
 Player::~Player()
