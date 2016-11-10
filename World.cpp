@@ -6,7 +6,7 @@ World::World()
 
   player = new Player("player", "I, me and myself", forest);
 
-  Item* sword = new Item("sword", "an awesome looking sword", forest);
+  Item* sword = new Item("sword", "an awesome looking sword", forest, WEAPON);
 
   things.push_back(forest);
 
@@ -23,6 +23,6 @@ World::~World()
   things.clear();
 }
 
-bool World::sendCommands(const string& input) {
+bool World::sendCommands(string& input) {
   return (player)->parseCommands(input);
 }

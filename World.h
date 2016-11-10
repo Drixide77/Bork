@@ -14,7 +14,7 @@ public:
   World();
   virtual ~World();
 
-  bool sendCommands(const string& input);
+  bool sendCommands(string& input);
 
 private:
   Player* player;

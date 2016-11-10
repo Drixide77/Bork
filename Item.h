@@ -4,10 +4,21 @@
 #include "Thing.h"
 #include "Utils.h"
 
+enum ItemType
+{
+  CONSUMABLE,
+  KEY,
+  WEAPON,
+  ARMOR
+};
+
 class Item: public Thing
 {
 public:
-  Item(const string& name, const string& description, Thing* container);
+  int value;
+  ItemType itemType;
+
+  Item(const string& name, const string& description, Thing* container, const ItemType& itemType);
   virtual ~Item();
 };
 

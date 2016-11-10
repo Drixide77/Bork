@@ -4,12 +4,17 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <list>
 #include <conio.h>
 #include <windows.h>
 
 using namespace std;
 
 //Contain global definitions and functions
+
+void Split(string& str, list<string>& words);
+
+void Uncase(string& str);
 
 //-------------------- Console Related Functions --------------------
 

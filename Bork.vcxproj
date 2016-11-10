@@ -122,6 +122,7 @@
   <ItemGroup>
     <ClInclude Include="Creature.h" />
     <ClInclude Include="Item.h" />
+    <ClInclude Include="memleaks.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Room.h" />
     <ClInclude Include="Thing.h" />
