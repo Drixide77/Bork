@@ -21,6 +21,52 @@ bool Player::parseCommands(string& input)
   Split(input, tokens);
   list<string>::iterator it = tokens.begin();
 
+  if (*it == "look")
+  {
+    ++it;
+    if (it == tokens.end())
+    {
+      cout << "You look at nothing in particular.\n"; // Player just typed "look"
+      return true;
+    }
+    if (*it == "around") // Player typed "look around"
+    {
+      cout << "You are in " << parent->description << ".";
+      list<Thing*>* things = &parent->contains;
+      if ((*things).size() > 0)
+      {
+        cout << " You see ";
+        bool last = false;
+        for (list<Thing*>::iterator it = (*things).begin(); it != (*things).end(); ++it)
+        {
+          if (last) cout << ", ";
+          last = false;
+          if ((*it)->name != "player")
+          {
+            cout << "a " << (*it)->name;
+            last = true;
+          }
+        }
+        cout << ".\n";
+      }
+      return true;
+    }
+    else // Player typed "look <thing>"
+    {
+
+    }
+  }
+
+  if (*it == "take")
+  {
+
+  }
+
+  if (*it == "go")
+  {
+
+  }
+
   if (*it == "quit") //Quiting the game
   {
     TextColor(12);
@@ -28,7 +74,7 @@ bool Player::parseCommands(string& input)
     TextColor(15);
 
     string next;
-    cin >> next;
+    getline(cin, next);
     Uncase(next);
     if (next == "quit") return false;
 
