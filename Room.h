@@ -10,6 +10,8 @@ class Room: public Thing
 public:
   Room(const string& name, const string& description);
   virtual ~Room();
+
+  void Look();
 };
 
 #endif

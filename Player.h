@@ -20,6 +20,8 @@ public:
   Player(const string& name, const string& description, Room* room);
   virtual ~Player();
 
+  void Look();
+
   bool parseCommands(string& input);
 
 };

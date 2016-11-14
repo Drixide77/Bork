@@ -4,15 +4,15 @@ World::World()
 {
   Room* forest = new Room("forest", "a rather dense forest");
 
-  player = new Player("player", "I, me and myself", forest);
+  things.push_back(forest);
 
   Item* sword = new Item("sword", "an awesome looking sword", forest, WEAPON);
 
-  things.push_back(forest);
+  things.push_back(sword);
+
+  player = new Player("player", "I, me and myself", forest);
 
   things.push_back(player);
-
-  things.push_back(sword);
 }
 
 World::~World()

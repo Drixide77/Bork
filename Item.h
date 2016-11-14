@@ -20,6 +20,8 @@ public:
 
   Item(const string& name, const string& description, Thing* container, const ItemType& itemType);
   virtual ~Item();
+
+  Thing* Find();
 };
 
 #endif

@@ -8,5 +8,10 @@ Item::Item(const string& name, const string& description, Thing* container, cons
 
 Item::~Item()
 {
+  cout << "You see " << description << ".";
+}
 
+Thing* Thing::Find()
+{
+  return (Thing*) (*contains.begin());
 }

@@ -9,3 +9,13 @@ Thing::~Thing()
 {
   
 }
+
+void Thing::Look()
+{
+  cout << "You see " << description << ".";
+}
+
+Thing* Thing::Find()
+{
+  return NULL;
+}
