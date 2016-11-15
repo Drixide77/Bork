@@ -13,11 +13,10 @@ int main()
 	bool running = true;  
   World world;
 
-  TextColor(11);
-  cout << "Welcome to BORK: A Tale of Tails!\n";
-  cout << "\n";
-  TextColor(15);
+  //Printing game intro
+  world.PrintIntro();
 
+  //Game Loop
 	while (running)
   {
     getline(cin, input);

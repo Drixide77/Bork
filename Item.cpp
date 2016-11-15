@@ -10,8 +10,3 @@ Item::~Item()
 {
   cout << "You see " << description << ".";
 }
-
-Thing* Thing::Find()
-{
-  return (Thing*) (*contains.begin());
-}

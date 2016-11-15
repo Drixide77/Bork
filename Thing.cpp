@@ -15,7 +15,11 @@ void Thing::Look()
   cout << "You see " << description << ".";
 }
 
-Thing* Thing::Find()
+Thing* Thing::Find(const string& name)
 {
+  for (list<Thing*>::iterator it = contains.begin(); it != contains.end(); ++it)
+  {
+    if ((*it)->name == name) return (*it);
+  }
   return NULL;
 }

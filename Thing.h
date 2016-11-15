@@ -32,7 +32,7 @@ public:
   virtual ~Thing();
 
   virtual void Look();
-  virtual Thing* Find();
+  virtual Thing* Find(const string& name);
 };
 
 #endif

@@ -20,7 +20,7 @@ void Room::Look()
   {
     for (list<Thing*>::iterator it = things.begin(); it != things.end(); ++it)
     {
-      if ((*it)->name != "player")
+      if ((*it)->type != PLAYER)
       {
         cout << " ";
         (*it)->Look();

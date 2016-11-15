@@ -16,6 +16,8 @@ public:
 
   bool sendCommands(string& input);
 
+  void PrintIntro();
+
 private:
   Player* player;
   list<Thing*> things;
