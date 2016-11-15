@@ -73,7 +73,9 @@ bool Player::parseCommands(string& input)
         if (target != NULL)
         {
           target->Look();
-          cout << " It's inside your inventory.\n";
+          if (target == weapon) cout << " You are holding it.\n";
+          else if (target == armor)cout << " You are wearing it.\n";
+          else cout << " It's inside your inventory.\n";
           return true;
         }
         //Nothing else matched
@@ -149,6 +151,16 @@ bool Player::parseCommands(string& input)
       {
         contains.remove(target);
         parent->contains.push_back(target);
+        if (target == weapon)
+        {
+          weapon = NULL;
+          cout << "You stop holding \"" << *it << "\". ";
+        }
+        if (target == armor)
+        {
+          armor = NULL;
+          cout << "You remove \"" << *it << "\". ";
+        }
         cout << "You place \"" << *it << "\" on the floor.\n";
       }
       else
@@ -158,6 +170,89 @@ bool Player::parseCommands(string& input)
       }
       return true;
     }
+  }
+
+  // E Q U I P
+  if (*it == "equip")
+  {
+    ++it;
+    if (it == tokens.end())
+    {
+      cout << "You try to equip yourself with the Mantel of Nothingness.\n"; // Player just typed "equip"
+      return true;
+    }
+    else // Player typed "equip <thing>"
+    {
+      Thing* target = Find(*it);
+      if (target != NULL)
+      {
+        if (target->type == ITEM)
+        {
+          if (((Item*)target)->itemType == WEAPON)
+          {
+            weapon = (Item*)target;
+            cout << "You are now holding \"" << *it << "\".\n";
+          } else if (((Item*)target)->itemType == ARMOR)
+          {
+            armor = (Item*)target;
+            cout << "You are wearing \"" << *it << "\".\n";
+          }
+          else
+          {
+            cout << "You cannot equip \"" << *it << "\".\n";
+          }
+        }
+      }
+      else
+      {
+        //Nothing else matched
+        cout << "You can't find \"" << *it << "\" in your inventory.\n";
+      }
+      return true;
+    }
+  }
+
+  // U N E Q U I P
+  if (*it == "unequip")
+  {
+    ++it;
+    if (it == tokens.end())
+    {
+      cout << "Needing to choose between to options, you still achieve to be ambiguous.\n"; // Player just typed "unequip"
+      return true;
+    }
+    else // Player typed "unequip <thing>"
+    {
+      if (*it == weapon->name | *it == "weapon")
+      {
+        weapon = NULL;
+        cout << "You stop holding \"" << *it << "\".\n";
+      } else if (*it == armor->name | *it == "armor")
+      {
+        armor = NULL;
+        cout << "You remove \"" << *it << "\".\n";
+      }
+      else cout << "You don't have \"" << *it << "\" equiped.\n";
+      return true;
+    }
+  }
+
+  // U S E
+  if (*it == "use") //Use consumable item or element in the Room(?)
+  {
+
+  }
+
+  // A P R O A C H
+  if (*it == "approach") //Approach NPC or Creature
+  {
+
+  }
+
+  // O P E N
+  if (*it == "open") //Doors or items
+  {
+
   }
 
   // G O
