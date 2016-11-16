@@ -16,6 +16,8 @@ void Split(string& str, list<string>& words);
 
 void Uncase(string& str);
 
+void AWinnerIsYou();
+
 //-------------------- Console Related Functions --------------------
 
 // Pause(): Halts execution until a key is pressed

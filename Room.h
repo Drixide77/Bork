@@ -2,6 +2,7 @@
 #define __Room__
 
 #include "Thing.h"
+#include "Exit.h"
 #include "Utils.h"
 
 //Defines a location in our game
@@ -12,6 +13,7 @@ public:
   virtual ~Room();
 
   void Look();
+  Exit* FindExit(const Direction& dir, const string& name);
 };
 
 #endif

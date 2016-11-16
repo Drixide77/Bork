@@ -4,6 +4,8 @@
 #include <list>
 #include "Utils.h"
 
+class Item;
+
 enum ThingType
 {
   THING,
@@ -12,7 +14,6 @@ enum ThingType
   EXIT,
   CREATURE,
   PLAYER,
-  NPC
 };
 
 //Defines the most generic entity of the game

@@ -3,6 +3,7 @@
 
 #include "Thing.h"
 #include "Room.h"
+#include "Exit.h"
 #include "Item.h"
 #include "Player.h"
 #include "Utils.h"

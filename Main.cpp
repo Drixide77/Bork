@@ -23,5 +23,6 @@ int main()
     running = world.sendCommands(input);
     cout << "\n";
 	}
+  Pause();
 	return 0;
 }

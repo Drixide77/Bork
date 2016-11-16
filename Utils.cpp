@@ -14,11 +14,18 @@ void Split(string& str, list<string>& words)
 
 void Uncase(string& str)
 {
-  for (int i = 0; i < str.length(); ++i)
+  for (int i = 0; i < (int)str.length(); ++i)
   {
     if (str[i] >= 65 && str[i] <= 90) str[i] += 32;
     if (str[i] == '\n') str[i] = ' ';
   };
+}
+
+void AWinnerIsYou()
+{
+  cout << "\n";
+  cout << "You escape the prison. Congratulations! You have beaten BORK!\n\n";
+  Pause();
 }
 
 void Pause() 

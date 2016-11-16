@@ -3,17 +3,12 @@
 
 #include "Creature.h"
 #include "Item.h"
+#include "Room.h"
 #include "Utils.h"
-
-#define INITIAL_EXP 50
-#define EXP_FACTOR 2
 
 class Player: public Creature
 {
 public:
-  int level;
-  int currentExp;
-  int expToLevelUp;
   Item* weapon;
   Item* armor;
 
@@ -21,6 +16,8 @@ public:
   virtual ~Player();
 
   void Look();
+
+  Thing* Find(const string& name);
 
   bool parseCommands(string& input);
 
